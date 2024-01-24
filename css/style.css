@@ -4,6 +4,8 @@
 
 .item {
     margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .item button {
@@ -37,4 +39,9 @@
 .myButton {
     width: 15%;
     height: 100%;
+}
+
+.list {
+    list-style-type: none;
+    width: 100%;
 }

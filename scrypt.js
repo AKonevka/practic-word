@@ -2,9 +2,11 @@ const myButton = document.querySelector('#myButton');
 const nameInput = document.querySelector('#nameInput');
 const list = document.querySelector('#list');
 
+
 myButton.addEventListener('click', (event) => {
     const newItem = document.createElement('li');
     // element.classList — Добавляет или удаляет классы для элемента
+    //newItem.setAttribute('id', 'newItem');
     newItem.classList.add('item');
     newItem.textContent = nameInput.value;
     // Добавить кнопку для удаления
@@ -23,6 +25,25 @@ myButton.addEventListener('click', (event) => {
     newItem.appendChild(deleteButton);
     list.appendChild(newItem);
     // очистка поля
-    nameInput.value = '';
+    //nameInput.value = '';
 })
+//let newItem = document.getElementsByClassName('newItem');
+//newItem.addEventListener('keydown', function (event) {
+
+//})
+
+
+
+
+
+
+
+
+
+
+
+/*newItem.addEventListener('click', (event) => {
+    newItem.style.backgroundColor = 'red';
+})*/
+
 
