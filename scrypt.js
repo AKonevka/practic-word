@@ -2,11 +2,20 @@ const myButton = document.querySelector('#myButton');
 const nameInput = document.querySelector('#nameInput');
 const list = document.querySelector('#list');
 
-let num = 1;
-let num2 = 0;
+let logNum = 1;
+let logNum2 = 1;
 
 myButton.addEventListener('click', (event) => {
+    console.log(event)
     const newItem = document.createElement('li');
+
+    /*
+        document.addEventListener('keydown', function(event) {
+            if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+              alert('Отменить!')
+            }
+          });
+    */
 
     // element.classList — Добавляет или удаляет классы для элемента
     //newItem.setAttribute('id', 'newItem');
@@ -21,16 +30,16 @@ myButton.addEventListener('click', (event) => {
     //deleteButton.textContent = 'Удалить';
 
 
-    if (num == 1) {
-        num = 2;
-        newItem.style = `background: rgb(249, 249, 249);`
-        deleteButton.style = `background: rgb(249, 249, 249);`
+    if (logNum == 1) {
+        logNum = 2;
+        //newItem.style = `background: rgb(249, 249, 249);`
+        // deleteButton.style = `background: rgb(249, 249, 249);`
     } else {
-        num = 1;
-        newItem.style = `background: rgb(238, 238, 238);`
-        deleteButton.style = `background: rgb(238, 238, 238);`
+        logNum = 1;
+        //newItem.style = `background: rgb(238, 238, 238);`
+        // deleteButton.style = `background: rgb(238, 238, 238);`
     }
-    console.log(num);
+    console.log(logNum);
 
 
     // Удаление элмента списка
@@ -47,8 +56,16 @@ myButton.addEventListener('click', (event) => {
     // очистка поля
     //nameInput.value = '';
     newItem.addEventListener('click', function (event) {
-        newItem.style = `background: rgb(136, 136, 136);`
-        deleteButton.style = `background: rgb(136, 136, 136);`
+        if (logNum2 == 1) {
+            newItem.style = `;
+            text-decoration: line-through;`;
+            logNum2 = 2;
+        } else {
+            newItem.style = `;
+            text-decoration: none;`;
+            logNum2 = 1;
+        }
+
     })
 })
 
