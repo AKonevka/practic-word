@@ -18,16 +18,11 @@ myButton.addEventListener('click', (event) => {
     */
 
     // element.classList — Добавляет или удаляет классы для элемента
-    //newItem.setAttribute('id', 'newItem');
-    //newCommentImg.id = 'id';
     newItem.classList.add('item');
     newItem.textContent = nameInput.value;
-    //let item = document.getElementsByClassName('#item');
     // Добавить кнопку для удаления
-    //const objectButton = document.createElement('div')
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('btn');
-    //deleteButton.textContent = 'Удалить';
 
 
     if (logNum == 1) {
@@ -45,7 +40,30 @@ myButton.addEventListener('click', (event) => {
     // Удаление элмента списка
     deleteButton.addEventListener('click', () => {
         // parent.removeChild(element) - удаляеь указанный элмент из родителя  
-        list.removeChild(newItem);
+        // задний фон
+        const warning = document.createElement('div');
+        warning.classList.add('warning')
+        document.body.append(warning);
+        // окно
+        const warningWindow = document.createElement('div');
+        warningWindow.classList.add('warningWindow')
+        warning.append(warningWindow);
+        // заголовок
+        const warningTitle = document.createElement('div');
+        warningTitle.classList.add('warningTitle')
+        warningTitle.append(warningWindow);
+        // текст
+        //const warningWindow = document.createElement('div');
+        //warningWindow.classList.add('warningWindow')
+        //warning.append(warningWindow);
+
+
+
+
+
+
+
+        //list.removeChild(newItem);
     })
 
     //Добавить кнопку в элемент списка
