@@ -5,8 +5,8 @@ const list = document.querySelector('#list');
 let logNum = 1;
 let logNum2 = 1;
 
-myButton.addEventListener('click', (event) => {
-    console.log(event)
+function createItem() {
+    //console.log(event)
     const newItem = document.createElement('li');
 
     /*
@@ -85,6 +85,16 @@ myButton.addEventListener('click', (event) => {
         }
 
     })
+}
+myButton.addEventListener('keypress', (event) => {
+    let key = event.keyCode;
+    if (key === 13) { // код клавиши Enter
+        createItem()
+    }
+})
+
+myButton.addEventListener('click', (event) => {
+    createItem()
 })
 
 
