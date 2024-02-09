@@ -1,9 +1,27 @@
 const myButton = document.querySelector('#myButton');
 const nameInput = document.querySelector('#nameInput');
 const list = document.querySelector('#list');
+const windowDelete = document.querySelector('#delete');
+const cancel = document.querySelector('#cancel');
 
 let logNum = 1;
 let logNum2 = 1;
+
+
+
+
+
+// event.key = нажатая кнопка
+
+myButton.addEventListener('click', createItem);
+
+nameInput.addEventListener('keyup', (event) => {
+    let key = event.keyCode;
+    if (key == 13) { // код клавиши Enter
+        createItem()
+    }
+})
+
 
 function createItem() {
     //console.log(event)
@@ -40,22 +58,14 @@ function createItem() {
     // Удаление элмента списка
     deleteButton.addEventListener('click', () => {
         // parent.removeChild(element) - удаляеь указанный элмент из родителя  
-        // задний фон
-        const warning = document.createElement('div');
-        warning.classList.add('warning')
-        document.body.append(warning);
-        // окно
-        const warningWindow = document.createElement('div');
-        warningWindow.classList.add('warningWindow')
-        warning.append(warningWindow);
-        // заголовок
-        const warningTitle = document.createElement('div');
-        warningTitle.classList.add('warningTitle')
-        warningTitle.append(warningWindow);
-        // текст
         //const warningWindow = document.createElement('div');
         //warningWindow.classList.add('warningWindow')
         //warning.append(warningWindow);
+        windowDelete.style = `display: flex;`
+        cancel.addEventListener('click', (event) => {
+            windowDelete.style = `display: none;`
+        })
+
 
 
 
@@ -86,16 +96,6 @@ function createItem() {
 
     })
 }
-myButton.addEventListener('keypress', (event) => {
-    let key = event.keyCode;
-    if (key === 13) { // код клавиши Enter
-        createItem()
-    }
-})
-
-myButton.addEventListener('click', (event) => {
-    createItem()
-})
 
 
 
